@@ -16,5 +16,5 @@ errors. Use these to help you debug the code and answer the provided questions.
 2. Clone your forked repository to your local machine (the URL should contain
         YOUR_USERNAME/ios-decal-..).
 3. Add an upstream remote that points to our original repository.
-4. **Complete debugging.playground.**
+4. **Complete swift.playground.**
 5. Add, commit, and push your modified file(s) to your forked remote repository.
