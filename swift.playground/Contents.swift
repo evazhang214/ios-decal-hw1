@@ -97,7 +97,6 @@ func isAnagram(wordA: String, wordB: String) -> Bool? {
     
     return nil
 }
-}
 //: ### The method above should be returning **true** or **false**. Debug the code so that
 //: ### this is true. You should edit the isAnagram and ONLY the isAnagram function. 
 //: ### What was wrong?
@@ -107,9 +106,9 @@ func isAnagram(wordA: String, wordB: String) -> Bool? {
 
 
 //: ## Check Your Answers
-//: ### If you have fully answered (in words *and* code) each question, and
-//: ### see the following output on the right sidebar, you have completed HW 1:
-
+//: ### If you now see an output stream in the right sidebar, you have successfully
+//: ### debugged the code above. Remember that you must also fully and correctly answer
+//: ### all of the written questions above to receive full credit for this homework.
 
 //: **DO NOT** touch any code below this point.
 Foo.isAnagram("anagram", wordB: "managra")
