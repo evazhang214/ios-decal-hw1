@@ -17,50 +17,51 @@ class Foo {
         wordA = words[0]
         wordB = words[1]
     }
-}
+
 //: ### We want to know why the code above works. Answer each question part below.
 
 
 //: ### a) What data type is **words**, and what is the type of the data it can hold?
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: [An array of optionals. Optional]
 
 
 //: ### b) What is the type of **words[0]** annd **words[1]**.
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: [Optional]
 
 
 //: ### c) What is the type of **wordsA** and **wordsB?**? Why?
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: [String. They are defined to be strings]
 
 
 //: ## Q2: Variable Types and Function Types
-func arePalindromes(words: [String]) -> Bool! {
+static func arePalindromes(words: [String]) -> Bool! {
     let reversedWords = words.map() {String($0.characters.reverse())}
     var numElements = words.count
     
-    for let i = 0; i < numElements; i++ {
+    for var i = 0; i < numElements; i++ {
         if words[i] != reversedWords[i] {
             return false
         }
     }
+    return true
 }
 //: ### Debug the code above. Why did the compiler dislike the **for loop**?
 //: ### What value should we expect to return?
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: [Because i would be a constant if we use "let" to define it. Return true if all words in "words" are palindromes. Return false otherwise.]
 
 
 
 //: ## Q3: More functions, and object initialization
-func isAnagram(wordA: String, wordB: String) -> Bool? {
-    var countLetters : [Character : Int]
+static func isAnagram(wordA: String, wordB: String) -> Bool {
+    var countLetters = [Character : Int]() //***IMPORTANT***
     var lenA = wordA.characters.count
     var lenB = wordB.characters.count
     
@@ -94,15 +95,15 @@ func isAnagram(wordA: String, wordB: String) -> Bool? {
             return false
         }
     }
-    
-    return nil
+    return true
+}
 }
 //: ### The method above should be returning **true** or **false**. Debug the code so that
 //: ### this is true. You should edit the isAnagram and ONLY the isAnagram function. 
 //: ### What was wrong?
 
 
-//: [EXPLAIN YOUR ANSWER HERE]
+//: [Need to initiate countLetters. We should return true instead of nil. Also, we need to make both functions static since there is not an incidence of Foo]
 
 
 //: ## Check Your Answers
@@ -111,7 +112,7 @@ func isAnagram(wordA: String, wordB: String) -> Bool? {
 //: ### all of the written questions above to receive full credit for this homework.
 
 //: **DO NOT** touch any code below this point.
-Foo.isAnagram("anagram", wordB: "managra")
+Foo.isAnagram("anagram", wordB: "managra") //***need to label everything but the first arguement***
 Foo.isAnagram("hello", wordB: "what")
 
 var palindromes = ["hih", "racecar", "mom", "wow"]
