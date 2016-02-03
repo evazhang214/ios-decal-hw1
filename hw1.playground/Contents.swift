@@ -46,7 +46,7 @@ class Words {
 
 //: ## Q3: More Functions and Object Initialization
     class func isAnagram() -> Bool {
-        var countLetters : [Character : Int]
+        var countLetters : [Character : Int] //Line X
         var lenA = self.wordA.characters.count
         var lenB = self.wordB.characters.count
         
@@ -59,7 +59,7 @@ class Words {
         
         for i in 0...lenA-1 {
             let letter = arrA[i]
-            if let val = countLetters[letter] {
+            if let val = countLetters[letter] { //Line Y
                 countLetters[letter] = val + 1
             } else {
                 countLetters[letter] = 1
