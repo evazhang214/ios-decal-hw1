@@ -8,14 +8,15 @@
 import UIKit
 
 
+
 //: ## Q1: Optionals
-class Foo {
+class Words {
     var wordA : String!
     var wordB : String!
     
-    init (words: [String?]) {
-        wordA = words[0]
-        wordB = words[1]
+    init (wordA: String?, wordB: String?) {
+        self.wordA = wordA
+        self.wordB = wordB
     }
 
 //: ### We want to know why the code above works. Answer each question part below.
@@ -60,7 +61,7 @@ static func arePalindromes(words: [String]) -> Bool! {
 
 
 //: ## Q3: More functions, and object initialization
-static func isAnagram(wordA: String, wordB: String) -> Bool {
+func isAnagram() -> Bool {
     var countLetters = [Character : Int]() //***IMPORTANT***
     var lenA = wordA.characters.count
     var lenB = wordB.characters.count
@@ -103,7 +104,7 @@ static func isAnagram(wordA: String, wordB: String) -> Bool {
 //: ### What was wrong?
 
 
-//: [Need to initiate countLetters. We should return true instead of nil. Also, we need to make both functions static since there is not an incidence of Foo]
+//: [Need to initiate countLetters. We should return true instead of nil. Also, we need to make the first function static since there is not an incidence of Words]
 
 
 //: ## Check Your Answers
@@ -112,11 +113,20 @@ static func isAnagram(wordA: String, wordB: String) -> Bool {
 //: ### all of the written questions above to receive full credit for this homework.
 
 //: **DO NOT** touch any code below this point.
-Foo.isAnagram("anagram", wordB: "managra") //***need to label everything but the first arguement***
-Foo.isAnagram("hello", wordB: "what")
+//Words.isAnagram("anagram", wordB: "managra") //***need to label everything but the first arguement***
+//Words.isAnagram("hello", wordB: "what")
+//
+//var palindromes = ["hih", "racecar", "mom", "wow"]
+//var notPalindromes = ["gene", "shawn", "hello"]
+//Words.arePalindromes(palindromes)
+//Words.arePalindromes(notPalindromes)
 
-var palindromes = ["hih", "racecar", "mom", "wow"]
-var notPalindromes = ["gene", "shawn", "hello"]
-Foo.arePalindromes(palindromes)
-Foo.arePalindromes(notPalindromes)
 
+//: **DO NOT** touch any code below this point.
+Words.arePalindromes(["hih", "racecar", "mom", "wow"])
+Words.arePalindromes(["gene", "shawn", "hello"])
+var wordsObj = Words.init(wordA: "anagram", wordB: "managra")
+wordsObj.isAnagram()
+wordsObj.wordA = "hello"
+wordsObj.wordB = "what"
+wordsObj.isAnagram()
