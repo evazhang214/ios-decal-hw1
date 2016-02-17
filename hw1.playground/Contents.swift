@@ -146,7 +146,7 @@ class Words {
         
         var arrB = Array(wordB.characters)
         
-        
+    
         
         for i in 0...lenA-1 {
             
